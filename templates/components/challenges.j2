@@ -1,0 +1,5 @@
+<ul>
+	{% for challenge in challenges %}
+		<li><a href="/c/{{ challenge['id'] }}">{{ challenge['title'] }}</a></li>
+	{% endfor %}
+</ul>

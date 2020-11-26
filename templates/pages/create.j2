@@ -1,0 +1,36 @@
+{% extends "base.j2" %}
+
+{% block title %} Create Challenge {% endblock %}
+
+{% block content %}
+	<form>
+		<input name="title" placeholder="Challenge Title" />
+		<br/>
+		<textarea name="description" placeholder="Description of challenge"></textarea>
+		<br/>
+		<textarea name="template_code" placeholder="Code the user starts off with"></textarea>
+		<br/>
+		<input name="template_code_export" placeholder="Name of method/class user must create" />
+		<br/>
+		<textarea name="test_code">
+class TestCaseName(unittest.TestCase):
+	HIDDEN_TESTS = ('test_hidden', )
+
+	def test_name(self):
+		self.assertTrue(user_method('abcdef'))
+
+	def test_hidden(self):
+		self.assertFalse(user_method('ghijkl'))
+		</textarea>
+		<br/>
+		<input name="test_code_export" value="TestCaseName" />
+		<br/>
+		<textarea name="working_code" placeholder="Code that can pass all your provided tests"></textarea>
+		<br/>
+		<button type="submit">Create</button>
+		<textarea readonly id="output"></textarea>
+	</form>
+
+	<script src="{{ url_for('static', filename='create_challenge.js') }}"></script>
+
+{% endblock %}

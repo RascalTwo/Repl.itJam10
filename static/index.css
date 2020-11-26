@@ -1,0 +1,15 @@
+main {
+	background-color: antiquewhite;
+	width: 90%;
+	margin: auto;
+	padding: 0.5em;
+}
+
+textarea {
+	height: 33vh;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}

@@ -1,0 +1,16 @@
+<ul>
+	{% for submission in submissions %}
+		<li>
+			Challenge: <a href="/c/{{ submission['challenge_id'] }}">{{ submission['challenge_id'] }}</a>
+			<br/>
+			{% if exclude_author or submission['author'] is none %}
+			{% else %}
+				Author: <a href="/u/{{ submission['author'] }}">{{ submission['author'] }}</a>
+				<br/>
+			{% endif %}
+			When: <p>{{ submission['when'] }}</p>
+			<br/>
+			Code: <textarea readonly>{{ submission['code'] }}</textarea>
+		</li>
+	{% endfor %}
+</ul>

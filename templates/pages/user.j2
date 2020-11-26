@@ -1,0 +1,10 @@
+{% extends "base.j2" %}
+
+{% block title %} {{ user['username'] }} {% endblock %}
+
+{% block content %}
+	<h1>{{ user['username'] }}</h1>
+	<a href="/logout">Logout</a>
+	<!-- TODO - replace with submissions list include -->
+	{% include "components/submissions.j2" %}
+{% endblock %}

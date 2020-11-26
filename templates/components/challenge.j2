@@ -1,0 +1,17 @@
+	<form autocomplete="off">
+		<input name="id" hidden value="{{ challenge['id'] }}">
+
+		<h2>{{ challenge['title'] }}</h2>
+		<p>{{ challenge['description']  }}</p>
+		{% if user_submission is none or user_submission is not defined %}
+			<pre>Solution must be named "{{ challenge['template_code'][1] }}" to pass</pre>
+			<textarea name="code">{{ challenge['template_code'][0] }}</textarea>
+			<span style="display: flex; flex-direction: row;">
+				<button type="submit" style="flex: 1;">Run</button>
+				<button type="button" id="submit-button" disabled style="flex: 1;">Submit</button>
+			</span>
+			<textarea readonly id="output"></textarea>
+		{% endif %}
+	</form>
+
+	<script src="{{ url_for('static', filename='challenge.js') }}"></script>

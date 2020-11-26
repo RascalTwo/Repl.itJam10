@@ -1,0 +1,18 @@
+{% extends "base.j2" %}
+
+{% block title %} {{ challenge['title'] }} {% endblock %}
+
+{% block content %}
+	{% include "components/challenge.j2" %}
+
+	{% if user_submission %}
+		<h2>Your submission</h2>
+		{% with submissions = [user_submission] %}
+			{% include "components/submissions.j2" %}
+		{% endwith %}
+
+		<h2>Other submissions</h2>
+		{% include "components/submissions.j2" %}
+	{% endif %}
+
+{% endblock %}

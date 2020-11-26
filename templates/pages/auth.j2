@@ -1,0 +1,22 @@
+{% extends "base.j2" %}
+
+{% block title %} Authenticate {% endblock %}
+
+{% block content %}
+	<section>
+		<h2>Login</h2>
+		<form action="/api/login" method="POST">
+			<input name="username" placeholder="Username"/>
+			<input name="password" placeholder="Password"/>
+			<button type="submit">Login</button>
+		</form>
+	</section>
+	<section>
+		<h2>Signup</h2>
+		<form action="/api/signup" method="POST">
+			<input name="username" placeholder="Username"/>
+			<input name="password" placeholder="Password"/>
+			<button type="submit">Signup</button>
+		</form>
+	</section>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+		<title>{% block title %} {% endblock %} - R2 Python Challenger</title>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				{% if session.user %}
+					<li><a href="/u/{{ session.user['username']}}">Profile</a></li>
+					<li><a href="/create">Create</a></li>
+				{% else %}
+					<li><a href="/auth">Authenticate</a></li>
+				{% endif %}
+			</ul>
+		</nav>
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div id="messages">
+					{% for message in messages %}
+						<p>{{ message }}</p>
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endwith %}
+
+		<main>
+			{% block content %}
+			{% endblock %}
+		</main>
+	</body>
+</html>
