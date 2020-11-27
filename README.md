@@ -5,6 +5,8 @@
 
 For [my submission][my submission] to [Code Jam #10][announcement post], I've made a basic challenge-and-test site clone.
 
+https://user-images.githubusercontent.com/9403665/128227331-f132060e-0b3c-4ba9-befc-5f1a5fe04c8b.mp4
+
 There are coding challenges, and you can submit code - after submission, the code is ran against test cases, and you are provided the output of the visible test cases to adjust your code.
 
 After submitting your code you can see other submissions for the same challenge
